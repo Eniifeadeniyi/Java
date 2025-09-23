@@ -6,9 +6,6 @@ As long as the letter inputed is a, e, i, o, or u, print "the letter" is a vowel
 If not, print "the letter" is a consonant.
 */
 
-
-
-
 import java.util.Scanner;
 
 public class LetterChecker {
@@ -41,7 +38,5 @@ System.out.print(letter + " is a vowel");
 else {
 System.out.print(letter + " is a consonant");
 }
-
-
 }
 }
