@@ -45,7 +45,7 @@ future = father - (2 * son);
 System.out.println("It will take " + future + " years for the father's age to be twice his son's age");
 
 if(father >= 1 && father <= 80 && father > son) {
-past = Math.abs((2 * son) - father);
+past = ((2 * son) - father) * -1;
 System.out.print("The father's age was twice his son's age " + past + " years ago.");
 }
 }
