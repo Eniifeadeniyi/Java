@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class SalesCommissionCalculator {
+public static void main(String[] args) {
+Scanner input = new Scanner(System.in);
+
+double constant = 200.00;
+double increase = 0.09;
+int items = 0;
+double total = 0;
+int totalitems = 0;
+
+while(items != -1){
+System.out.print("Enter number of items sold(-1 to end): ");
+items = input.nextInt();
+
+System.out.print("Enter value of the items sold: ");
+double value = input.nextDouble();
+
+totalitems += items;
+total += value;
+
+
+if(items == -1) {
+double earnings = constant + (increase * total);
+System.out.println("You sold " + totalitems + " items in total this week");
+System.out.print("The total earnings for the week is : " + earnings);
+}
+
+
+
+
+}
+}
