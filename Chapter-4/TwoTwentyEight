@@ -1,0 +1,30 @@
+//Number 28.
+// x = 9, y = 11
+// x = 11, y = 9
+
+
+
+if (x < 10)
+if (y > 10)
+System.out.println("*");
+else
+System.out.println("#####");
+System.out.println("$$$$$");
+/*
+Output a: ***** $$$$$
+Output b: ##### $$$$$ 
+*/
+
+
+if (x < 10) {
+if (y > 10)
+System.out.println("*");
+}
+else {
+System.out.println("#####");
+System.out.println("$$$$$");
+}
+/*
+Ouput a: *****
+Output b: ##### $$$$$
+*/
