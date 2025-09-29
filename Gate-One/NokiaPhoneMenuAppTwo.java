@@ -21,7 +21,7 @@ Enter a number:
 	11. Clock
 	12. Profiles
 	13. SIM services
-  14. previous
+    14. previous
 """;
 
 System.out.print(main);
@@ -42,7 +42,7 @@ String phonebook = """
 	8. Options
 	9. Speed dials
 	10. Voice tags
-  11. previous
+    11. previous
 """;
 System.out.print(phonebook);
 choice = input.nextInt();
@@ -61,7 +61,7 @@ while(pick != 3) {
 String choose = """
 	1. Type of view
 	2. Memory status
-  3. previous
+    3. previous
 """;
 System.out.print(choose);
 pick = input.nextInt();
@@ -93,7 +93,7 @@ String messages = """
 	8. Info service
 	9. Voice mailbox number
 	10. Service command editor
-  11. previous
+    11. previous
 """;
 System.out.print(messages);
 pick = input.nextInt();
@@ -111,7 +111,7 @@ while(set != 3) {
 String message = """
 	1. Set 1
 	2. Common
-  3. previous
+    3. previous
 """;
 System.out.print(message);
 set = input.nextInt();
@@ -124,7 +124,7 @@ String set1 = """
 	1. Message centre number
 	2. Messages sent as
 	3. Message validity
-  4. previous
+    4. previous
 """;
 System.out.print(set1);
 common = input.nextInt();
@@ -142,7 +142,7 @@ String common1 = """
 	1. Delivery reports
 	2. Reply via same centre
 	3. Character support
-  4. previous
+    4. previous
 """;
 System.out.print(common1);
 common2 = input.nextInt();
@@ -176,7 +176,7 @@ String call = """
 	6. Show call costs
 	7. Call cost settings
 	8. Prepaid credit
-  9. previous
+    9. previous
 """;
 System.out.print(call);
 register = input.nextInt();
@@ -195,7 +195,7 @@ String show = """
 	3. Received calls'duration
 	4. Dialled calls'duration
 	5. Clear timers
-  6. previous
+    6. previous
 """;
 System.out.print(show);
 duration = input.nextInt();
@@ -216,7 +216,7 @@ String costs = """
 	1. Last call cost
 	2. All calls'cost
 	3. Clear counters
-  4. previous
+    4. previous
 """;
 System.out.print(costs);
 cost = input.nextInt();
@@ -234,7 +234,7 @@ while(limit != 3) {
 String settings = """
 	1. Call cost limit
 	2. Show costs in
-  3. previous
+    3. previous
 """;
 System.out.print(settings);
 limit = input.nextInt();
@@ -264,7 +264,7 @@ String tones = """
 	7. Warning and game tones
 	8. Vibrating alert
 	9. Screen saver
-  10. previous
+    10. previous
 """;
 System.out.print(tones);
 tone = input.nextInt();
@@ -291,7 +291,7 @@ String setting = """
 	2. Phone settings
 	3. Security settings
 	4. Restore factory settings
-  5. previous
+    5. previous
 """;
 System.out.print(setting);
 set = input.nextInt();
@@ -307,7 +307,7 @@ String automatic = """
 	4. Own number sending
 	5. Phone line in use
 	6. Automatic answer
-  7. previous
+    7. previous
 """;
 System.out.print(automatic);
 auto = input.nextInt();
@@ -333,7 +333,7 @@ String phone = """
 	4. Network selection
 	5. Lights
 	6. Confirm SIM service actions
-  7. previous
+    7. previous
 """;
 System.out.print(phone);
 language = input.nextInt();
@@ -359,7 +359,7 @@ String security = """
 	4. Closed user group
 	5. Phone security
 	6. Change access codes
-  7. previous
+    7. previous
 """;
 System.out.print(security);
 secure = input.nextInt();
@@ -393,7 +393,7 @@ String clock = """
 	4. Stopwatch
 	5. Countdown timer
 	6. Auto update of date and time
-  7. previous
+    7. previous
 """;
 System.out.print(clock);
 alarm = input.nextInt();
