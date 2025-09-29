@@ -19,16 +19,13 @@ double value = input.nextInt();
 
 totalitems += items;
 total += value;
-
+}
 
 if(items == -1) {
 double earnings = constant + (increase * total);
 System.out.println("You sold " + totalitems + " items in total this week");
 System.out.print("The total earnings for the week is : " + earnings);
+
 }
-
-
-
-
 }
 }
