@@ -20,7 +20,7 @@ System.out.print("Enter credit limit: ");
 int creditlimit = input.nextInt();
 int newbalance = initialbalance + (items - total);
 
-System.out.print(newbalance);
+System.out.print("Your new balance is " + newbalance);
 
 if(newbalance > creditlimit) {
 System.out.print("Credit limit exceeded!");
@@ -30,3 +30,4 @@ System.out.print("Credit limit exceeded!");
 }
 
 }
+
