@@ -8,7 +8,7 @@ System.out.print("Enter a five-digit number: ");
 int number = input.nextInt();
 
 while(number > 99999 || number < 10000) {
-System.out.print("Invalid input!");
+System.out.println("Invalid input!");
 System.out.print("Enter a five-digit number: ");
 number = input.nextInt();
 }
