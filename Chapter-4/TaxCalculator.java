@@ -15,7 +15,7 @@ System.out.print("Enter citizen's first name: ");
 String name = input.next();
 
 System.out.print("Enter citizen's earning(in USD): ");
-earning = input.nextDouble();
+earning = input.nextInt();
 
 if(earning <= 30000.00) {
 tax = 0.15 * earning;
