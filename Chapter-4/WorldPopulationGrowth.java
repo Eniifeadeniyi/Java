@@ -1,8 +1,8 @@
 public class PopulationGrowth {
 public static void main(String[] args) {
-double population = 8231613070.0;
+long population = 8231613070L;
 double growthRate = 0.0085;
-double twicePopulation = population * 2;
+long twicePopulation = population * 2;
 int year = 1;
 
 System.out.println("Year\tPopulation\t\tIncrease");
