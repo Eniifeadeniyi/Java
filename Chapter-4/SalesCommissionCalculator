@@ -15,7 +15,7 @@ System.out.print("Enter number of items sold(-1 to end): ");
 items = input.nextInt();
 
 System.out.print("Enter value of the items sold: ");
-double value = input.nextDouble();
+double value = input.nextInt();
 
 totalitems += items;
 total += value;
