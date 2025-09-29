@@ -26,7 +26,7 @@ secondmaximum = nextnumber;
 counter += 1;
 
 }
-System.out.print("The largest number is: " + maximum);
+System.out.println("The largest number is: " + maximum);
 System.out.print("The second largest number is: " + secondmaximum);
 }
 }
