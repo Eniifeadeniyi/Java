@@ -8,14 +8,14 @@ System.out.print("Enter a positive number: ");
 int number = input.nextInt();
 
 int divisor = 2;
-while(divisor <= number) {
+while(divisor < number) {
   if (number % divisor == 0) {
     System.out.print(number + " is not a prime number");
+    break;
       }
     divisor++;
     if(number % divisor != 0) {
       System.out.print(number + " is a prime number");
-      break;
        
     }
     }
