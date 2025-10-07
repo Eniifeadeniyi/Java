@@ -90,14 +90,6 @@ public static boolean isEven(int number) {
 	return false;
 }
 
-public static void printStars(int numberOfRows) {
-	for(int row = 1; row <= numberOfRows; row++){
-		for(int column = 1; column <= row; column++) {
-			System.out.print("* ");
-		}
-	System.out.println();
-	}
-}
 
 public static int subtract(int firstNumber, int secondNumber) {
 	int difference = firstNumber - secondNumber;
