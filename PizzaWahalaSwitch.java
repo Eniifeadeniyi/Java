@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PizzaWahala {
+public class PizzaWahalaSwitch {
 public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
 
@@ -25,9 +25,11 @@ String menu = """
 System.out.print(menu);
 
 System.out.print("Enter the pizza type you are interested in: ");
-String pizzaType = input.nextLine();
+String pizzaType = input.nextLine().toLowerCase();
 
-if(pizzaType.equalsIgnoreCase("Sapa size")) {
+switch(pizzaType) {
+
+	case "sapa size" -> {
 int numberOfBoxes = guests / 4;
 if(guests % 4 != 0) {
 numberOfBoxes += 1;
@@ -43,7 +45,7 @@ int total = 2500 * numberOfBoxes;
 System.out.print("Your total charge is ₦" + total);
 }
 
-if(pizzaType.equalsIgnoreCase("Small Money")) {
+case "small money" -> {
 int numberOfBoxes = guests / 6;
 if(guests % 6 != 0) {
 numberOfBoxes += 1;
@@ -59,7 +61,8 @@ int total = 2900 * numberOfBoxes;
 System.out.print("Your total charge is ₦" + total);
 }
 
-if(pizzaType.equalsIgnoreCase("Big boys")) {
+
+case "big boys" -> {
 int numberOfBoxes = guests / 8;
 if(guests % 8 != 0) {
 numberOfBoxes += 1;
@@ -75,7 +78,7 @@ int total = 4000 * numberOfBoxes;
 System.out.print("Your total charge is ₦" + total);
 }
 
-if(pizzaType.equalsIgnoreCase("Odogwu")) {
+case "odogwu" -> {
 int numberOfBoxes = guests / 12;
 if(guests % 12 != 0) {
 numberOfBoxes += 1;
@@ -92,5 +95,6 @@ System.out.print("Your total charge is ₦" + total);
 }
 
 
+}
 }
 }
