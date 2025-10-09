@@ -15,7 +15,11 @@ public static int getMiddleElement(int[] numbers) {
 	}
 	if(numbers.length % 2 == 0) {
 		count = (numbers.length + 1) / 2;
+<<<<<<< HEAD
 		int middle = numbers[count - 1];				
+=======
+		int middle = numbers[count - 1];		
+>>>>>>> 6b2786c2c628195068648e7537ac1050cea1e5ca
 		return middle;
 	}
 return 0;

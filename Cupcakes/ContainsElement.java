@@ -16,5 +16,8 @@ public static boolean containsElement(int target, int [] numbers) {
 	}
 
 return false;
+<<<<<<< HEAD
+=======
 }
+>>>>>>> 6b2786c2c628195068648e7537ac1050cea1e5ca
 }
