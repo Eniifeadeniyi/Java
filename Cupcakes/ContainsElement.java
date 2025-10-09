@@ -9,7 +9,7 @@ System.out.print(containsElement(new int [] {12,13,13,13,11,11,11,11,14,15}));
 }
 
 public static boolean containsElement(int [] numbers) {
-	for(int count = 0; count < 10; count++) {
+	for(int count = 0; count < numbers.length; count++) {
 		if(numbers[0] == numbers[count]) {
 			return true;
 		}
