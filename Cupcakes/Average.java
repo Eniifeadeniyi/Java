@@ -8,7 +8,7 @@ public static double averageArray(int[] numbers) {
 	int count = 0;
 	double sum = 0.0;
 	
-	while(count < 10) {
+	while(count < numbers.length) {
 		sum += numbers[count];
 		count++; 
 	}
@@ -16,5 +16,3 @@ public static double averageArray(int[] numbers) {
 
 }
 }
-
-
