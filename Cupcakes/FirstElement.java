@@ -1,10 +1,13 @@
 public class FirstElement {
 public static void main(String[] args) {
 
-System.out.print(getFirstElement(new int [] {125,25,67,89}));
+System.out.print(getFirstElement(new int [] {}));
 }
 public static int getFirstElement(int[] numbers) {
-	return numbers[0];
+	if(numbers.length == 0) {
+		return 0;
+	}
+return numbers[0];
 
 }
 }
