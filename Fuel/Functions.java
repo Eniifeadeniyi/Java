@@ -1,6 +1,6 @@
 public class Functions {
 public static String petrolAmount(Double amount) {
-	if(amount >= 1000) {
+	if(amount >= 1000 & amount <= 50000) {
 		Double numberOfLitres = amount / 1000;
 		String receipt = String.format("""
 		Customers Transaction Receipt
@@ -15,9 +15,11 @@ public static String petrolAmount(Double amount) {
 		""",amount, numberOfLitres);
 		return receipt;
 		}
-	else  
+	if(amount < 1000) 
 		return("Amount must be above a liter price!!!");
-	
+	if(amount > 50000) 
+		return("Amount must be less than the price of 50liters!!!");
+return null;	
 }
 
 
@@ -42,7 +44,7 @@ public static String petrolLiter(Double numberOfLitres) {
 	
 }
 public static String dieselAmount(Double amount) {
-	if(amount >= 1500) {
+	if(amount >= 1500 & amount <= 75000) {
 		Double numberOfLitres = amount / 1500;
 		String receipt = String.format("""
 		Customers Transaction Receipt
@@ -57,9 +59,11 @@ public static String dieselAmount(Double amount) {
 		""",amount, numberOfLitres);
 		return receipt;
 		}
-	else  
+	if(amount < 1500) 
 		return("Amount must be above a liter price!!!");
-	
+	if(amount > 75000) 
+		return("Amount must be less than the price of 50liters!!!");
+return null;	
 }
 
 
@@ -85,7 +89,7 @@ public static String dieselLiter(Double numberOfLitres) {
 }
 
 public static String keroseneAmount(Double amount) {
-	if(amount >= 1200) {
+	if(amount >= 1200 & amount <= 60000) {
 		Double numberOfLitres = amount / 1200;
 		String receipt = String.format("""
 		Customers Transaction Receipt
@@ -100,9 +104,11 @@ public static String keroseneAmount(Double amount) {
 		""",amount, numberOfLitres);
 		return receipt;
 		}
-	else  
+	if(amount < 1200) 
 		return("Amount must be above a liter price!!!");
-	
+	if(amount > 60000) 
+		return("Amount must be less than the price of 50liters!!!");
+return null;	
 }
 
 
@@ -128,7 +134,7 @@ public static String keroseneLiter(Double numberOfLitres) {
 }
 
 public static String gasAmount(Double amount) {
-	if(amount >= 1800) {
+	if(amount >= 1800 & amount <= 90000) {
 		Double numberOfLitres = amount / 1800;
 		String receipt = String.format("""
 		Customers Transaction Receipt
@@ -143,9 +149,12 @@ public static String gasAmount(Double amount) {
 		""",amount, numberOfLitres);
 		return receipt;
 		}
-	else  
+
+	if(amount < 1800) 
 		return("Amount must be above a liter price!!!");
-	
+	if(amount > 90000) 
+		return("Amount must be less than the price of 50liters!!!");
+return null;	
 }
 
 

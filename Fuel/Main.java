@@ -1,11 +1,12 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main { 
 public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
 
 
-String receipts = "";
+ArrayList<String> receipts = new ArrayList<String>();
 
 String operation = ""; 
 while(!operation.equals("3")) {
@@ -20,7 +21,10 @@ Enter operation:
 System.out.print(main);
 operation = input.next();
 switch(operation) {
-	case "2" -> System.out.print("...");
+	case "2" -> {
+		if(!receipts.isEmpty()) System.out.println(receipts);
+		if(receipts.isEmpty()) System.out.println("No purchases made yet!");
+			}
 	case "3" -> System.out.print("See you next time!");
 	default -> System.out.println("Invalid input!");
 	case "1" -> {
@@ -34,7 +38,6 @@ switch(operation) {
 			""";
 
 		System.out.print(menu);
-		System.out.print("");
 		String option = input.next();
 
 		switch (option) {
@@ -45,32 +48,42 @@ switch(operation) {
 						case "amount" -> {
 								System.out.print("How much Petrol are you buying(1000/L): ");
 								Double amount = input.nextDouble();
-								System.out.print(Functions.petrolAmount(amount));
+								String receipt = Functions.petrolAmount(amount);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 
 						case "liter" -> {
 								System.out.print("How many liters of Petrol are you buying(1000/L): ");
 								Double liter = input.nextDouble();
-								System.out.print(Functions.petrolLiter(liter));
+								String receipt = Functions.petrolLiter(liter);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 
 	
 							}
 					}
+		
 			case "2" -> {
 				    System.out.print("Liter or Amount: ");
 				    String choice = input.next().toLowerCase();
+
 					switch (choice) {
 						case "amount" -> {
 								System.out.print("How much Diesel are you buying(1500/L): ");
 								Double amount = input.nextDouble();
-								System.out.print(Functions.dieselAmount(amount));
+								String receipt = Functions.dieselAmount(amount);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 	
 						case "liter" -> {
 								System.out.print("How many liters of Diesel are you buying(1500/L): ");
 								Double liter = input.nextDouble();
-								System.out.print(Functions.dieselLiter(liter));
+								String receipt = Functions.dieselLiter(liter);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 
 							}
@@ -83,13 +96,17 @@ switch(operation) {
 						case "amount" -> {
 								System.out.print("How much Kerosene are you buying(1200/L): ");
 								Double amount = input.nextDouble();
-								System.out.print(Functions.keroseneAmount(amount));
+								String receipt = Functions.keroseneAmount(amount);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 		
 						case "liter" -> {
 								System.out.print("How many liters of Kerosene are you buying(1200/L): ");
 								Double liter = input.nextDouble();
-								System.out.print(Functions.keroseneLiter(liter));
+								String receipt = Functions.keroseneLiter(liter);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 
 							}
@@ -97,17 +114,22 @@ switch(operation) {
 			case "4" -> {
 				    System.out.print("Liter or Amount: ");
 				    String choice = input.next().toLowerCase();
+
 					switch (choice) {
 						case "amount" -> {
 								System.out.print("How much Gas are you buying(1800/L): ");
 								Double amount = input.nextDouble();
-								System.out.print(Functions.gasAmount(amount));
+								String receipt = Functions.gasAmount(amount);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 		
 						case "liter" -> {
 								System.out.print("How many liters of Gas are you buying(1800/L): ");
 								Double liter = input.nextDouble();
-								System.out.print(Functions.gasLiter(liter));
+								String receipt = Functions.gasLiter(liter);
+								receipts.add(receipt);
+								System.out.print(receipt);
 								}
 	
 							}
