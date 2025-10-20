@@ -3,6 +3,7 @@ public static String petrolAmount(Double amount) {
 	if(amount >= 1000) {
 		Double numberOfLitres = amount / 1000;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -10,6 +11,7 @@ public static String petrolAmount(Double amount) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
@@ -23,6 +25,7 @@ public static String petrolLiter(Double numberOfLitres) {
 	if(numberOfLitres >= 1 & numberOfLitres <= 50) {
 		Double amount = numberOfLitres * 1000;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -30,6 +33,7 @@ public static String petrolLiter(Double numberOfLitres) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
@@ -41,6 +45,7 @@ public static String dieselAmount(Double amount) {
 	if(amount >= 1500) {
 		Double numberOfLitres = amount / 1500;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -48,6 +53,7 @@ public static String dieselAmount(Double amount) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
@@ -61,6 +67,7 @@ public static String dieselLiter(Double numberOfLitres) {
 	if(numberOfLitres >= 1 & numberOfLitres <= 50) {
 		Double amount = numberOfLitres * 1500;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -68,6 +75,7 @@ public static String dieselLiter(Double numberOfLitres) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
@@ -80,6 +88,7 @@ public static String keroseneAmount(Double amount) {
 	if(amount >= 1200) {
 		Double numberOfLitres = amount / 1200;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -87,6 +96,7 @@ public static String keroseneAmount(Double amount) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
@@ -100,6 +110,7 @@ public static String keroseneLiter(Double numberOfLitres) {
 	if(numberOfLitres >= 1 & numberOfLitres <= 50) {
 		Double amount = numberOfLitres * 1200;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -107,6 +118,7 @@ public static String keroseneLiter(Double numberOfLitres) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
@@ -119,6 +131,7 @@ public static String gasAmount(Double amount) {
 	if(amount >= 1800) {
 		Double numberOfLitres = amount / 1800;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -126,6 +139,7 @@ public static String gasAmount(Double amount) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
@@ -139,6 +153,7 @@ public static String gasLiter(Double numberOfLitres) {
 	if(numberOfLitres >= 1 & numberOfLitres <= 50) {
 		Double amount = numberOfLitres * 1800;
 		String receipt = String.format("""
+		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
@@ -146,6 +161,7 @@ public static String gasLiter(Double numberOfLitres) {
 		=	Thanks for patronizing Eniife's Station 	=
 		=		Hope to see you again!			=
 		=========================================================
+		Saving Transaction History...
 		""",amount, numberOfLitres);
 		return receipt;
 		}
