@@ -3,7 +3,6 @@ public static String petrolAmount(Double amount) {
 	if(amount >= 1000 & amount <= 50000) {
 		Double numberOfLitres = amount / 1000;
 		String receipt = String.format("""
-		Customers Transaction Receipt
 		=========================================================
 		=	Product : Petrol       				=
 		=	Amount : #%.2f    				=
