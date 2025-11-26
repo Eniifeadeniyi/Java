@@ -17,7 +17,8 @@ if(input.hasNextLine()) {
 		String type = input.next();
 		problem.setTypeOfProblem(type);
 		System.out.println(problem.getNameOfProblem());
-		System.out.println(problem.getTypeOfProblem());}
+		System.out.println(problem.getTypeOfProblem());
+		System.out.println(problem.getProblemStatus());}
 
 }
 input.nextLine();
