@@ -118,8 +118,8 @@ public class Turtle {
 		}
 	}
 
-    public int getSpotOnFloor(){
-        return floor[row][column];
+    public int getSpotOnFloor(int count, int counter){
+        return floor[count][counter];
     }
 
     public void getFloor(){

@@ -86,6 +86,7 @@ public class TurtleTest {
     public void testThatDrawWorks(){
         turtle.setPenDown("2");
         turtle.draw("5,6");
-        assertEquals(1,turtle.getSpotOnFloor());
+        assertEquals(1,turtle.getSpotOnFloor(0,4));
+        assertEquals(0,turtle.getSpotOnFloor(0,8));
     }
 }
