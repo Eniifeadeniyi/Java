@@ -3,7 +3,7 @@ public class ValidateCreditCard {
 public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
 
-System.out.print("Hello, kindly Enter Card details to verify: ");
+System.out.print("Hello, kindly enter card details to verify: ");
 while(!input.hasNext()) {
 	System.out.print("Invalid input!");
 	System.out.print("Hello, kindly Enter Card details to verify: ");
