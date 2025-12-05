@@ -28,15 +28,29 @@ public class MyMap {
 
     private int searchKeys(String key){
         for(int count = 0; count < keys.size(); count++){
-            if(keys[count].equals(key)) return count;
+            if(keys.get(count).equals(key)) return count;
         }
         return -1;
     }
     public String get(String key) {
-        if(keys.contains(key)){
+        if (keys.contains(key)) {
             int index = searchKeys(key);
-            return values[index];
+            return values.get(index);
         }
         return null;
+    }
+
+    public boolean containsKey(String key) {
+        return keys.contains(key);
+    }
+
+    public boolean containsValue(String value) {
+        return values.contains(value);
+    }
+
+    public void clear() {
+         keys.clear();
+         values.clear();
+         count = 0;
     }
 }

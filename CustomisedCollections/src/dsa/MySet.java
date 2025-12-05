@@ -59,5 +59,10 @@ public class MySet {
         count = 0;
     }
 
+    public String get(int index){
+        if(index < 0 || index > count) throw new IndexOutOfBoundsException();
+        return elements[index];
+    }
+
 
 }

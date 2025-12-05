@@ -40,4 +40,27 @@ public class MapTest {
         assertEquals("eniife", map.get("name"));
     }
 
+    @Test
+    public void testContainsKey(){
+        map.put("name","eniife");
+        assertFalse(map.containsKey("specie"));
+        assertTrue(map.containsKey("name"));
+    }
+
+    @Test
+    public void testContainsValue(){
+        map.put("name","eniife");
+        assertFalse(map.containsValue("tissue"));
+        assertTrue(map.containsValue("eniife"));
+    }
+
+    @Test
+    public void testClearMapBecomesEmpty(){
+        map.put("name","eniife");
+        assertFalse(map.isEmpty());
+        map.clear();
+        assertTrue(map.isEmpty());
+        assertEquals(0,map.size());
+    }
+
 }
