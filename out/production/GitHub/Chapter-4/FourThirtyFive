@@ -1,5 +1,0 @@
-(Write a Java statement) What will be the value of x after executing the following Java
-statement? Assume that value of x is 5 before the execution.
-x += x++ - 5;
-
-// x = 6.
