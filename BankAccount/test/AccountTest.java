@@ -9,7 +9,7 @@ public class AccountTest {
     Account account;
     @BeforeEach
     public void setUp() {
-        account = new Account("156");
+        account = new Account("eniife", "adeniyi", "156");
     }
 
     @Test
@@ -19,19 +19,19 @@ public class AccountTest {
 
     @Test
     public void deposit2kBalanceIncreasesBy2k(){
-        account.deposit(2000,"156");
+        account.deposit(2000);
         assertEquals(2000,account.getbalance("156"));
     }
 
     @Test
     public void ExceptionIsThrownWhenDepositingNegativeAmount(){
-        assertThrows(InvalidDepositAmountException.class, () -> account.deposit(-200,"156" ));
+        assertThrows(InvalidDepositAmountException.class, () -> account.deposit(-200 ));
         assertEquals(0,account.getbalance("156"));
     }
 
     @Test
     public void Deposit5kWithdraw2kBalanceIs3k(){
-        account.deposit(5000,"156" );
+        account.deposit(5000);
         account.withdraw(2000, "156");
         assertEquals(3000,account.getbalance("156"));
     }
@@ -43,7 +43,7 @@ public class AccountTest {
 
     @Test
     public void Withdraw2kFrom4kBalance(){
-        account.deposit(4000,"156" );
+        account.deposit(4000);
         account.withdraw(2000,"156");
         assertEquals(2000,account.getbalance("156"));
     }
@@ -55,7 +55,6 @@ public class AccountTest {
 
     @Test
     public void WrongPasswordEntered(){
-        assertThrows(IncorrectPasswordException.class, () -> account.deposit(5000, "1234"));
         assertThrows(IncorrectPasswordException.class, () -> account.withdraw(5000, "1234"));
         assertThrows(IncorrectPasswordException.class, () -> account.getbalance("1234"));
     }
