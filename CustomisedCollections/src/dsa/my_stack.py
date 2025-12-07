@@ -1,8 +1,8 @@
 class MyStack:
-    def __init__(self, maxSize):
+    def __init__(self, max_size):
         self.stack = []
         self.count = 0
-        self.maxsize = maxSize
+        self.max_size = max_size
 
     def push(self,item):
         if not(self.is_full()):
@@ -32,7 +32,7 @@ class MyStack:
             raise OverflowError("Stack is empty")
 
     def is_full(self):
-        if self.count == self.maxsize:
+        if self.count == self.max_size:
             return True
         else:
             return False
