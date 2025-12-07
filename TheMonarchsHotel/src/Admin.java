@@ -25,7 +25,7 @@ public class Admin {
 
     public boolean checkCustomers(String username) {
         for (Customer customer : customers) {
-            if (customer.getUserName().equalsIgnoreCase(username)) {
+            if (customer.getUsername().equalsIgnoreCase(username)) {
                 return true;
             }
         }
@@ -35,7 +35,7 @@ public class Admin {
     public Customer getCustomer(String username) {
         if (checkRooms(username)) {
             for (Customer customer : customers) {
-                if (customer.getUserName().equals(username)) {
+                if (customer.getUsername().equals(username)) {
                     return customer;
                 }
             }

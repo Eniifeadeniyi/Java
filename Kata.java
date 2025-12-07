@@ -100,7 +100,6 @@ public static int subtract(int firstNumber, int secondNumber) {
 }
 
 public static boolean isSquare(int number) {
-	public static boolean isSquare(int number) {
 	int divisor = 1;
 	int factorCount = 0;
 	while(divisor <= number) {

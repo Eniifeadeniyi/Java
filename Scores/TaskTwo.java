@@ -1,3 +1,4 @@
+package Scores;
 import java.util.Scanner;
 
 public class TaskTwo {

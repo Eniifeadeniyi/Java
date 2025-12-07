@@ -1,3 +1,4 @@
+package ValidateCreditCard;
 public class Functions {
 
 public static String checkCardType(String cardNumber) {

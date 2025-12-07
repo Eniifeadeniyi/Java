@@ -1,0 +1,57 @@
+//Number 29
+//a. x = 5, y = 8
+//b. x = 5, y = 8
+//c. x = 5, y = 8
+//d. x = 5, y = 7
+
+if (y == 8)
+if (x == 5)
+System.out.println("@@@@@");
+else
+System.out.println("#####");
+System.out.println("$$$$$");
+System.out.println("&&&&&");
+
+a. if (y == 8) {
+     if (x == 5) { 
+	System.out.println("@@@@@");
+   }
+   }
+   else {
+	System.out.println("#####");
+   }
+   System.out.println("$$$$$");
+   System.out.println("&&&&&");
+
+b. if (y == 8) {
+     if (x == 5) {
+   	System.out.println("@@@@@");
+   }
+   }
+   else {
+   System.out.println("#####");
+   System.out.println("$$$$$");
+   System.out.println("&&&&&");
+   }
+
+c. if (y == 8) {
+     if (x == 5) {
+   	System.out.println("@@@@@");
+   }
+   }
+   else { 
+   System.out.println("#####");
+   System.out.println("$$$$$");
+   }
+   System.out.println("&&&&&");
+
+d. if (y == 8) {
+   if (x == 5) {
+   System.out.println("@@@@@");
+   }
+   }
+   else {
+   System.out.println("#####");
+   System.out.println("$$$$$");
+   System.out.println("&&&&&");
+   }

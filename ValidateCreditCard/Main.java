@@ -1,5 +1,7 @@
+package ValidateCreditCard;
+
 import java.util.Scanner;
-public class ValidateCreditCard {
+public class Main {
 public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
 

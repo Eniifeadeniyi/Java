@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 public class Customer {
-    private String userName;
+    private String username;
     private String password;
     private String fullName;
     private String phoneNumber;
@@ -14,8 +14,8 @@ public class Customer {
     private double paymentDue;
     private double totalPaid;
 
-    public Customer(String userName, String password, String fullName, String phoneNumber, String email){
-        this.userName = userName;
+    public Customer(String username, String password, String fullName, String phoneNumber, String email){
+        this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
@@ -23,7 +23,7 @@ public class Customer {
     }
 
     public boolean login(String username, String password){
-        return username.equals(userName) && password.equals(this.password);
+        return username.equals(this.username) && password.equals(this.password);
     }
 
     public void setCheckInDate(LocalDate checkInDate){
@@ -81,8 +81,8 @@ public class Customer {
         return referenceNumber;
     }
 
-    public String getUserName(){
-        return userName;
+    public String getUsername(){
+        return username;
     }
 
     public double getPaymentDue(){

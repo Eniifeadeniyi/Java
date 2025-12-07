@@ -1,3 +1,5 @@
+package Fuel;
+
 public class Functions {
 public static String petrolAmount(Double amount) {
 	if(amount >= 1000 & amount <= 50000) {
