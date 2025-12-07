@@ -1,3 +1,5 @@
+import Exceptions.InvalidAmountException;
+
 import java.time.LocalDate;
 
 public class Customer {
@@ -14,12 +16,12 @@ public class Customer {
     private double paymentDue;
     private double totalPaid;
 
-    public Customer(String username, String password, String fullName, String phoneNumber, String email){
+    public Customer(String username, String password, String fullName, String email, String phoneNumber){
         this.username = username;
         this.password = password;
         this.fullName = fullName;
-        this.phoneNumber = phoneNumber;
         this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     public boolean login(String username, String password){
@@ -56,12 +58,10 @@ public class Customer {
     }
 
     public void makePayment(double amount){
-            if (paymentDue - amount == 0) {
-                paymentDue -= amount;
-                totalPaid += amount;
-                paymentStatus = true;
-            }
-            if (amount < paymentDue) paymentDue -= amount;
+        if(amount > paymentDue || amount <= 0) throw new InvalidAmountException("Invalid amount");
+        paymentDue -= amount;
+        totalPaid += amount;
+        if(paymentDue == 0) paymentStatus = true;
     }
 
     public String checkPaymentStatus(){

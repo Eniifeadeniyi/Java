@@ -95,9 +95,9 @@ public class AdminTest{
         assertEquals(4,rooms.size());
         assertEquals(2,admin.getNumberOfCustomers());
         admin.giveCustomerARoom("eni", "double", "12/03/2028", 3, false);
+        rooms = admin.getAllAvailableRooms();
+        assertEquals(3,rooms.size());
     }
-
-
 
 
 }

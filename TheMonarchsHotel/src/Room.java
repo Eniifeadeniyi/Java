@@ -9,10 +9,12 @@ public class Room{
     private boolean isFestivePeriod;
 
     public Room(String roomNumber, String roomType){
-        if(roomType.trim().equalsIgnoreCase("Single") || roomType.trim().equalsIgnoreCase("Double") || roomType.trim().equalsIgnoreCase("Suite")) {
-            if (roomNumber.trim().length() == 3) {
-                this.roomNumber = roomNumber.trim();
-                this.roomType = roomType.trim();
+        roomType = roomType.trim().toLowerCase();
+        roomNumber = roomNumber.trim();
+        if(roomType.equals("single") || roomType.equals("double") || roomType.equals("suite")) {
+            if (roomNumber.length() == 3) {
+                this.roomNumber = roomNumber;
+                this.roomType = roomType;
                 isAvailable = true;
             }
         }
@@ -27,16 +29,18 @@ public class Room{
     }
 
     public void setIsUnderMaintenance(boolean input){
-            if(input) isUnderMaintenance = true;
-            if(!input)isUnderMaintenance = false;
+            isUnderMaintenance = input;
+            setIsAvailable();
     }
 
     public void setIsAvailable(){
-        isAvailable = !isBooked && !isUnderMaintenance;
+        if(isBooked || isUnderMaintenance) isAvailable = false;
+        if(!isBooked && !isUnderMaintenance) isAvailable = true;
     }
 
     public void setIsBooked(boolean input){
         isBooked = input;
+        setIsAvailable();
     }
 
     public boolean getIsAvailable(){

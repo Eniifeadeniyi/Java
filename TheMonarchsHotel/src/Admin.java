@@ -22,35 +22,31 @@ public class Admin {
         return this.password.equals(password);
     }
 
-
     public boolean checkCustomers(String username) {
         for (Customer customer : customers) {
-            if (customer.getUsername().equalsIgnoreCase(username)) {
+            if (customer.getUsername().equalsIgnoreCase(username))
                 return true;
-            }
+
         }
         return false;
     }
 
     public Customer getCustomer(String username) {
-        if (checkRooms(username)) {
+        if (checkCustomers(username)) {
             for (Customer customer : customers) {
-                if (customer.getUsername().equals(username)) {
+                if (customer.getUsername().equals(username))
                     return customer;
-                }
+
             }
         }
         return null;
     }
 
     public Customer getCustomerByRoomNumber(String number){
-        if(checkRooms(number)){
             for (Customer customer : customers) {
-                if(customer.getRoomNumber().equals(number)){
+                if(customer.getRoomNumber() != null && customer.getRoomNumber().equals(number))
                     return customer;
-                }
             }
-        }
         return null;
     }
 
@@ -69,44 +65,34 @@ public class Admin {
     }
 
     private Room getRoomByType(String roomType) {
-        if (checkRooms(roomType)) {
             for (Room room : rooms) {
-                if(room.getRoomType().equalsIgnoreCase(roomType) && room.getIsAvailable()) {
+                if(room.getRoomType().equalsIgnoreCase(roomType) && room.getIsAvailable())
                     return room;
-                }
             }
-        }
         return null;
     }
 
-    public void giveCustomerARoom(String userName,String roomType, String checkInDate, int numberOfNights, boolean input){
-        if(checkCustomers(userName)){
-            Customer customer = getCustomer(userName);
-            if(customer != null) {
-                Room room = getRoomByType(roomType.toLowerCase());
-                if(room != null){
-                    customer.setRoomNumber(room.getRoomNumber());
-                    customer.setReferenceNumber(generateReferenceNumber());
-                    String number = customer.getRoomNumber();
-                    Room place = getRoom(number);
-                    if(place != null) {
-                        place.setIsFestivePeriod(input);
-                        setPricePerNight(customer.getRoomNumber());
-                        customer.setPaymentDue(place.getPricePerNight() * numberOfNights);
-                        expectedRevenue += customer.getPaymentDue();
-                        place.setIsBooked(true);
-                        place.setIsAvailable();
-
-                    }
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                    LocalDate localDate = LocalDate.parse(checkInDate, formatter);
-                    LocalDate checkOutDate = localDate.plusDays(numberOfNights);
-                    customer.setCheckInDate(localDate);
-                    customer.setCheckOutDate(checkOutDate);
-                }
+    public void giveCustomerARoom(String userName,String roomType, String checkInDate, int numberOfNights, boolean input) {
+        Customer customer = getCustomer(userName);
+        if (customer != null) {
+            Room room = getRoomByType(roomType.toLowerCase());
+            if (room != null) {
+                room.setIsFestivePeriod(input);
+                setPricePerNight(room.getRoomNumber());
+                customer.setRoomNumber(room.getRoomNumber());
+                customer.setReferenceNumber(generateReferenceNumber());
+                customer.setPaymentDue(room.getPricePerNight() * numberOfNights);
+                expectedRevenue += customer.getPaymentDue();
+                room.setIsBooked(true);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                LocalDate localDate = LocalDate.parse(checkInDate, formatter);
+                LocalDate checkOutDate = localDate.plusDays(numberOfNights);
+                customer.setCheckInDate(localDate);
+                customer.setCheckOutDate(checkOutDate);
             }
         }
     }
+
     private boolean checkRooms(String number) {
         for (Room room : rooms) {
             if (room.getRoomNumber().equals(number)) {
@@ -117,21 +103,15 @@ public class Admin {
     }
 
     private Room getRoom(String number) {
-        if (checkRooms(number)) {
             for (Room room : rooms) {
-                if (room.getRoomNumber().equals(number)) {
+                if (room.getRoomNumber().equals(number))
                     return room;
-                }
             }
-        }
         return null;
     }
 
     private boolean validateRoomNumberAndType(String roomNumber, String roomType) {
-        if(roomNumber.length() == 3) {
-            return roomType.equalsIgnoreCase("single") || roomType.equalsIgnoreCase("double") || roomType.equalsIgnoreCase("suite");
-        }
-        return false;
+        return roomNumber.trim().length() == 3 && (roomType.trim().equalsIgnoreCase("single") || roomType.trim().equalsIgnoreCase("double") || roomType.trim().equalsIgnoreCase("suite"));
     }
 
     public void addARoom(String number, String type) {
@@ -151,28 +131,21 @@ public class Admin {
 
     public void putRoomUnderMaintenance(String number) {
         Room room = getRoom(number);
-        if (room != null) {
-            if (room.getIsAvailable()) {
-                room.setIsUnderMaintenance(true);
-                room.setIsAvailable();
-            }
-        }
+        if (room != null && room.getIsAvailable())
+            room.setIsUnderMaintenance(true);
     }
 
     public void removeRoomFromUnderMaintenance(String number) {
         Room room = getRoom(number);
-        if (room != null) {
-                room.setIsUnderMaintenance(false);
-                room.setIsAvailable();
-        }
+        if (room != null)
+            room.setIsUnderMaintenance(false);
     }
 
     private String generateReferenceNumber() {
         String referenceNumber = "RES";
         Random rand = new Random();
         for (int count = 1; count <= 4; count++) {
-            int number = rand.nextInt(10);
-            referenceNumber += String.valueOf(number);
+            referenceNumber += rand.nextInt(10);
         }
         return referenceNumber;
     }
@@ -201,9 +174,8 @@ public class Admin {
     public ArrayList<Room> getAllAvailableRooms() {
         ArrayList<Room> availableRooms = new ArrayList<>();
         for (Room room : rooms) {
-            if(room.getIsAvailable()) {
+            if(room.getIsAvailable())
                 availableRooms.add(room);
-            }
         }
         return availableRooms;
     }
@@ -224,10 +196,8 @@ public class Admin {
                 customer.setPaymentDue(0);
                 customer.setCheckOutDate(null);
                 Room room = getRoom(number);
-                if (room != null) {
-                    room.setIsBooked(false);
-                    room.setIsAvailable();
-                }
+                if (room != null) room.setIsBooked(false);
+
             }
         }
     }
@@ -245,10 +215,12 @@ public class Admin {
     }
 
     public double getExpectedRevenue(){
+        calculateExpectedRevenue();
         return expectedRevenue;
     }
 
     public double getActualRevenue(){
+        calculateRevenueGenerated();
         return revenue;
     }
 
