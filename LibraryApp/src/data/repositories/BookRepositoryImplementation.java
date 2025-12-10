@@ -1,7 +1,6 @@
 package data.repositories;
 
 import data.models.Book;
-import exceptions.BookRepositoryExceptions.InvalidIdException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,19 +16,33 @@ public class BookRepositoryImplementation implements BookRepository {
 
     @Override
     public Book save(Book book) {
-        count++;
-        book.setId(count);
-        books.add(book);
+        if(isNew(book)) saveNew(book);
+        else update(book);
         return book;
     }
 
-    private void validateId(int id){
-        if(id <= 0 || id > count) throw new InvalidIdException("Invalid id!");
+    private void update(Book book) {
+        books.remove(findById(book.getId()));
+        books.add(book);
     }
+
+    private void saveNew(Book book) {
+        book.setId(++count);
+        books.add(book);
+    }
+
+    private boolean isNew(Book book) {
+        for(Book checkBook : books) {
+            if(checkBook.getId() == book.getId())
+                return false;
+        }
+        return true;
+    }
+
 
     @Override
     public Book findById(int id) {
-        validateId(id);
+        if(id <= 0 || id > count) return null;
         return books.get(id - 1);
     }
 
@@ -40,8 +53,7 @@ public class BookRepositoryImplementation implements BookRepository {
 
     @Override
     public void deleteById(int id) {
-        validateId(id);
-        books.remove(id-1);
+        books.remove(findById(id));
     }
 
     @Override
