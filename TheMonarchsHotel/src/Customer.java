@@ -46,7 +46,10 @@ public class Customer {
     }
 
     public void editFullName(String newFullName){
-        fullName = newFullName;
+        String[] names =  newFullName.split(" ");
+        if(names.length == 2) {
+            fullName = newFullName;
+        }
     }
 
     public void editPhoneNumber(String newPhoneNumber){

@@ -89,15 +89,18 @@ public class AdminTest{
         admin.addARoom("101", "double");
         admin.addARoom("102", "double");
         admin.addARoom("005", "suite");
-        admin.registerCustomer("eni", "12345", "Eniifeoluwa Adeniyi", "eniifeoluwaadeniyi@gmail.com", "08069902899");
-        admin.registerCustomer("tomi", "2564", "Tomiwa Shekinah","tomiwa@gmail.com", "08023465970");
+        Customer customer1 = admin.registerCustomer("eni", "12345", "Eniifeoluwa Adeniyi", "eniifeoluwaadeniyi@gmail.com", "08069902899");
+        Customer customer2 = admin.registerCustomer("tomi", "2564", "Tomiwa Shekinah","tomiwa@gmail.com", "08023465970");
         ArrayList<Room> rooms = admin.getAllAvailableRooms();
         assertEquals(4,rooms.size());
         assertEquals(2,admin.getNumberOfCustomers());
         admin.giveCustomerARoom("eni", "double", "12/03/2028", 3, false);
         rooms = admin.getAllAvailableRooms();
         assertEquals(3,rooms.size());
+        assertEquals("101", customer1.getRoomNumber());
+        assertEquals(36000, customer1.getPaymentDue());
     }
+
 
 
 }

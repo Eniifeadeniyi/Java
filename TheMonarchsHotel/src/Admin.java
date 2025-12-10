@@ -5,8 +5,9 @@ import java.util.Random;
 
 public class Admin {
     private final String password;
-    private final ArrayList<Room> rooms = new ArrayList<>();
-    private final ArrayList<Customer> customers = new ArrayList<>();
+    private ArrayList<Room> rooms = new ArrayList<>();
+    private ArrayList<Customer> customers = new ArrayList<>();
+    private ArrayList<String> referenceNumbers = new ArrayList<>();
     private double expectedRevenue;
     private double revenue;
 
@@ -57,11 +58,13 @@ public class Admin {
         return names.length == 2 && partsOfEmail.length == 2 && phoneNumber.length() == 11;
     }
 
-    public void registerCustomer(String userName, String password, String fullName, String email, String phoneNumber){
+    public Customer registerCustomer(String userName, String password, String fullName, String email, String phoneNumber){
         if(!checkCustomers(userName) && validateCustomerDetails(fullName, email, phoneNumber)){
             Customer customer = new Customer(userName, password, fullName, email, phoneNumber);
             customers.add(customer);
+            return customer;
         }
+        return null;
     }
 
     private Room getRoomByType(String roomType) {
@@ -144,9 +147,16 @@ public class Admin {
     private String generateReferenceNumber() {
         String referenceNumber = "RES";
         Random rand = new Random();
-        for (int count = 1; count <= 4; count++) {
-            referenceNumber += rand.nextInt(10);
+          for (int count = 1; count <= 4; count++) {
+                referenceNumber += rand.nextInt(10);
+            }
+        while(referenceNumbers.contains(referenceNumber)) {
+            referenceNumber = "RES";
+            for (int count = 1; count <= 4; count++) {
+                referenceNumber += rand.nextInt(10);
+            }
         }
+        referenceNumbers.add(referenceNumber);
         return referenceNumber;
     }
 
@@ -197,7 +207,6 @@ public class Admin {
                 customer.setCheckOutDate(null);
                 Room room = getRoom(number);
                 if (room != null) room.setIsBooked(false);
-
             }
         }
     }
@@ -224,4 +233,10 @@ public class Admin {
         return revenue;
     }
 
+
+    /*
+    public  generateNotification(){
+
+    }
+     */
 }
