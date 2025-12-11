@@ -17,6 +17,7 @@ class BookServicesImplementationTest {
     void setUp() {
         bookServicesImpl = new BookServicesImplementation();
         bookRepositoryImpl = new BookRepositoryImplementation();
+        bookRepositoryImpl.deleteAll();
     }
 
     @Test

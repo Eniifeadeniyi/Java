@@ -12,6 +12,7 @@ class BookRepositoryImplementationTest {
     @BeforeEach
     void startWith() {
         bookRepositoryImplementation = new BookRepositoryImplementation();
+        bookRepositoryImplementation.deleteAll();
     }
 
     @Test
