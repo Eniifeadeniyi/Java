@@ -7,7 +7,7 @@ import java.util.List;
 
 public class BookRepositoryImplementation implements BookRepository {
     private int count;
-    private List<Book> books = new ArrayList<>();
+    private static List<Book> books = new ArrayList<>();
 
     @Override
     public long count() {
